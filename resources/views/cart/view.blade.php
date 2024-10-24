@@ -79,8 +79,14 @@
             </div>
         @else
             <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                @if(Auth::check())
                 <p class="text-xl text-gray-800 font-semibold">Your cart is empty!</p>
-                <a href="/" class="mt-4 inline-block px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Continue Shopping</a>
+                <a href="/customer" class="mt-4 inline-block px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Continue Shopping</a>
+            @else
+            <p class="text-xl text-gray-800 font-semibold">Your cart is empty!</p>
+            <a href="/" class="mt-4 inline-block px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Continue Shopping</a>
+            @endif
+            
             </div>
         @endif
     </div>

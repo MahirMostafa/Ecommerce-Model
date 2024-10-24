@@ -20,7 +20,7 @@
                 <div class="p-4">
                     <h3 class="text-lg font-bold text-gray-800">{{$product->pname}}</h3>
                     <div class="mt-4 flex items-center flex-wrap gap-2">
-                        <h3 class="text-lg font-font-sans text-gray-800">{{$product->price}}</h3>
+                        <h3 class="text-lg font-font-sans text-gray-800">{{ $product->inventory->selling_price ?? 'N/A' }}</h3>
                     </div>
                     <div class="mt-1">
                         <h3 class="text-sm font-font-sans text-gray-800">{{$product->Status}}</h3>

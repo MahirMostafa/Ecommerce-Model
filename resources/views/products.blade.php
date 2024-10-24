@@ -31,7 +31,7 @@
                 @enderror
                 </div>
             </div>
-            <div class="flex flex-wrap -mx-3 mb-6">
+            {{-- <div class="flex flex-wrap -mx-3 mb-6">
                 <div class="w-full mb-6 px-3">
                     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="quantity">
                         Quantity
@@ -50,9 +50,9 @@
                     <p class="text-red-600">{{$message}}
                 @enderror
                 </div>
-                
+                 --}}
             </div>
-            <div class="flex flex-wrap -mx-3 mb-6">
+            {{-- <div class="flex flex-wrap -mx-3 mb-6">
                 <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="buying-price">
                         Buying Price
@@ -71,7 +71,7 @@
                     <p class="text-red-600">{{$message}}
                 @enderror
                 </div>
-            </div>
+            </div> --}}
         
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="file_input">Product Image</label>
             <input class="block w-full text-sm text-gray-200 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-800" id="file_input" name="file_input" type="file" value="{{old('file_input')}}">

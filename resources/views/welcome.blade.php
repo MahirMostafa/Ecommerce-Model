@@ -119,7 +119,7 @@
                           </ul>
           
                           <div class="mt-4 flex items-center justify-between gap-4">
-                              <p class="text-2xl font-extrabold leading-tight text-gray-900 dark:text-white">{{$product->price}}</p>
+                              <p class="text-2xl font-extrabold leading-tight text-gray-900 dark:text-white">{{ $product->inventory->selling_price ?? 'N/A' }}</p>
                           </div>
                           <div class="mt-4 flex items-center justify-center gap-4">
                               <form action="{{ route('cart.add') }}" method="POST">

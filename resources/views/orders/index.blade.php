@@ -77,7 +77,8 @@
                     <!-- Order Actions -->
                     <div class="flex justify-end p-4">
                         @if($order->status == 'pending')
-                            <form action="{{ route('orders.cancel', $order->id) }}" method="POST">
+                        <form action="" method="POST">
+                            {{-- <form action="{{ route('orders.cancel', $order->id) }}" method="POST"> --}}
                                 @csrf
                                 <button type="submit" class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600">Cancel Order</button>
                             </form>

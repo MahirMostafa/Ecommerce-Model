@@ -59,10 +59,9 @@ class PaymentController extends Controller
     {
         $order = Order::findOrFail($orderId);
 
-        // Initialize Stripe (Assuming you've set up your Stripe keys in env file)
+
         \Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
 
-        // Create a Stripe checkout session
         $session = \Stripe\Checkout\Session::create([
             'payment_method_types' => ['card'],
             'line_items' => [[

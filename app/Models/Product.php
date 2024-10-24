@@ -13,9 +13,6 @@ class Product extends Model
 
     protected $fillable = [
         'pname',
-        'quantity',
-        'buying_price',
-        'price',
         'description',
         'image',
         'status',
@@ -34,5 +31,25 @@ class Product extends Model
     public function orderItems()
     {
         return $this->hasMany(OrderItem::class);
+    }
+
+    public function inventory()
+    {
+        return $this->hasOne(Inventory::class);
+    }
+
+    public function getBuyingPriceAttribute()
+    {
+        return $this->inventory ? $this->inventory->buying_price : null;
+    }
+
+    public function getSellingPriceAttribute()
+    {
+        return $this->inventory ? $this->inventory->selling_price : null;
+    }
+
+    public function getQuantityAttribute()
+    {
+        return $this->inventory ? $this->inventory->quantity : 0;
     }
 }

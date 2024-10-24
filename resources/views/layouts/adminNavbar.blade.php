@@ -25,6 +25,8 @@
           <li><a class="text-black/60 hover:text-black dark:text-white/60 dark:hover:text-white" href="/category">View Category</a></li>
           <li><a class="text-black/60 hover:text-black dark:text-white/60 dark:hover:text-white" href="/brand">View Brands</a></li>
           <li><a class="text-black/60 hover:text-black dark:text-white/60 dark:hover:text-white" href="/addbrand">Add Brands</a></li>
+          <li><a class="text-black/60 hover:text-black dark:text-white/60 dark:hover:text-white" href="/inventory/add">Add Inventory</a></li>
+          <li><a class="text-black/60 hover:text-black dark:text-white/60 dark:hover:text-white" href="/transactions/history">Stock History</a></li>
       </ul>
 
       <div class="relative flex items-center ml-auto">

@@ -13,6 +13,9 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashBoardController;
+
+use App\Http\Controllers\InventoryController;
+use App\Http\Controllers\InventoryTransactionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,8 +43,9 @@ Route::post('/cart/remove/{id}', [CartController::class, 'removeFromCart'])->nam
 Route::post('/cart/update/{id}', [CartController::class, 'updateCart'])->name('cart.update');
 
 // Place Order (requires authentication)
+Route::post('/cart/place-order', [CartController::class, 'placeOrder'])->name('cart.placeOrder');
 Route::middleware(['auth'])->group(function () {
-    Route::post('/cart/place-order', [CartController::class, 'placeOrder'])->name('cart.placeOrder');
+    // Route::post('/cart/place-order', [CartController::class, 'placeOrder'])->name('cart.placeOrder');
     Route::get('/payment/{order}', [PaymentController::class, 'show'])->name('payment.show');
     Route::post('/payment/{order}', [PaymentController::class, 'store'])->name('payment.store');
 });
@@ -67,6 +71,10 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::delete('/deletebrand/{id}', [BrandController::class, 'deleteData'])->name('deletebrand');
     Route::get('/editbrand/{id}', [BrandController::class, 'edit'])->name('editbrand');
     Route::post('/updatebrand/{id}', [BrandController::class, 'update'])->name('updatebrand');
+    Route::get('/inventory/add', [InventoryController::class, 'getAddToInventory'])->name('inventory.getAdd');
+    Route::post('/inventory/add', [InventoryController::class, 'addToInventory'])->name('inventory.add');
+    Route::get('/transactions/history', [InventoryTransactionController::class, 'showHistory'])->name('transactions.history');
+    Route::get('/transactions/get', [InventoryTransactionController::class, 'transactionHistory'])->name('transactions.get');
 });
 
 // Customer Routes (requires both authentication and customer role)

@@ -66,7 +66,7 @@ class CartController extends Controller
     public function placeOrder(Request $request)
     {
         if (!Auth::check()) {
-            return redirect()->route('login')->with('error', 'Please log in to place your order.');
+            return redirect()->route('login')->with('fail', 'Please log in to place your order.');
         }
 
         $user = Auth::user();

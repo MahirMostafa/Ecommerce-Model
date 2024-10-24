@@ -7,17 +7,16 @@ use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
-
-
     public function index()
     {
-        // Fetch orders with orderItems, ordered by created_at in descending order
+        // Fetch orders that have a payment and with orderItems, ordered by created_at in descending order
         $orders = Order::where('user_id', auth()->id())
+            ->whereHas('payment') // Only fetch orders that have a payment
             ->with('orderItems') // Eager load orderItems only
             ->orderBy('created_at', 'desc') // Order by created_at descending
             ->get();
 
-        // Create an array to store product names
+        // Create an array to store product IDs from order items
         $productIds = [];
         foreach ($orders as $order) {
             foreach ($order->orderItems as $item) {
